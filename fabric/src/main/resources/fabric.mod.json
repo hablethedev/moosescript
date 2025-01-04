@@ -9,27 +9,26 @@
     "${mod_author}"
   ],
   "contact": {
-    "homepage": "https://minescript.net/",
-    "sources": "https://github.com/maxuser0/minescript",
-    "issues": "https://github.com/maxuser0/minescript/issues"
+    "sources": "https://github.com/hablethedev/moosescript",
+    "issues": "https://github.com/hablethedev/moosescript/issues"
   },
 
   "license": "${license}",
-  "icon": "assets/modid/minescript-logo.png",
+  "icon": "assets/modid/moosescript-logo.png",
 
   "environment": "client",
   "entrypoints": {
     "main": [
-      "net.minescript.fabric.MinescriptFabricMod"
+      "dev.moosescript.fabric.MoosescriptFabricMod"
     ],
     "client": [
-      "net.minescript.fabric.MinescriptFabricClientMod"
+      "dev.moosescript.fabric.MoosescriptFabricClientMod"
     ]
   },
 
   "mixins": [
-    "minescript.mixins.json",
-    "minescript.fabric.mixins.json"
+    "moosescript.mixins.json",
+    "moosescript.fabric.mixins.json"
   ],
 
   "depends": {

@@ -1,16 +1,13 @@
 #!/bin/bash
 
-# SPDX-FileCopyrightText: © 2022-2024 Greg Christiana <maxuser@minescript.net>
-# SPDX-License-Identifier: MIT
-
-# Updates the Minescript version number across configs and sources. If
+# Updates the Moosescript version number across configs and sources. If
 # --fork_docs is specified, docs/README.md is forked to
 # docs/v<old_version>/README.md; if --nofork_docs is specified, docs are not
 # forked. Pass -n for a dry run, i.e. print the commands that would run or the
 # old version strings that would be matched, but do not rewrite the version
 # number.
 #
-# This script must be run from the 'minescript' directory, and expects 'fabric'
+# This script must be run from the 'moosescript' directory, and expects 'fabric'
 # and 'forge' subdirectories.
 #
 # Usage:
@@ -57,8 +54,8 @@ done
 
 old_version_re=$(echo $old_version |sed 's/\./\\./g')
 
-if [ "$(basename $(pwd))" != "minescript" ]; then
-  echo "update_version_number.sh must be run from 'minescript' directory." >&2
+if [ "$(basename $(pwd))" != "moosescript" ]; then
+  echo "update_version_number.sh must be run from 'moosescript' directory." >&2
   exit 3
 fi
 
@@ -94,10 +91,10 @@ fi
 # Rewrite version in first line of docs/README.md.
 if [ $dry_run = 0 ]; then
   sed -i '' -e \
-      "s/^## Minescript v${old_version} docs$/## Minescript v${new_version} docs/" \
+      "s/^## Moosescript v${old_version} docs$/## Moosescript v${new_version} docs/" \
       docs/README.md
 else
-  grep "^## Minescript v${old_version} docs$" docs/README.md
+  grep "^## Moosescript v${old_version} docs$" docs/README.md
 fi
 
 if [ $fork_docs_only = 0 ]; then

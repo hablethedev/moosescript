@@ -1,15 +1,12 @@
-# SPDX-FileCopyrightText: © 2022-2024 Greg Christiana <maxuser@minescript.net>
-# SPDX-License-Identifier: GPL-3.0-only
-
-# WARNING: This file is generated from the Minescript jar file. This file will
-# be overwritten automatically when Minescript updates to a new version. If you
+# WARNING: This file is generated from the Moosescript jar file. This file will
+# be overwritten automatically when Moosescript updates to a new version. If you
 # make edits to this file, make sure to save a backup copy when upgrading to a
-# new version of Minescript.
+# new version of Moosescript.
 
-r"""paste v4.0 distributed via Minescript jar file
+r"""paste v4.0 distributed via Moosescript jar file
 
 Requires:
-  minescript v3.0
+  moosescript v3.0
 
 Usage: \paste X Y Z [LABEL]
 
@@ -20,12 +17,12 @@ LABEL given, otherwise blocks are pasted from the most
 recent copy command with no label given.
 """
 
-import minescript
+import moosescript
 import os
 import re
 import sys
 
-from minescript import echo, getblocklist, BlockPack
+from moosescript import echo, getblocklist, BlockPack
 
 def is_eligible_for_paste(x, z, dx, dz, safety_limit) -> bool:
   sample_blocks_by_chunk = []
@@ -79,8 +76,8 @@ def main(args):
 
   # BlockPacks (stored in .zip files) take precedence over legacy .txt files containing setblock
   # commands.
-  blockpack_filename = os.path.join("minescript", "blockpacks", label + ".zip")
-  legacy_txt_filename = os.path.join("minescript", "copies", label + ".txt")
+  blockpack_filename = os.path.join("moosescript", "blockpacks", label + ".zip")
+  legacy_txt_filename = os.path.join("moosescript", "copies", label + ".txt")
   if os.path.isfile(blockpack_filename):
     blockpack = BlockPack.read_file(blockpack_filename, relative_to_cwd=True)
     min_block, max_block = blockpack.block_bounds()
@@ -117,7 +114,7 @@ def main(args):
         fields[1] = str(int(fields[1]) + x)
         fields[2] = str(int(fields[2]) + y)
         fields[3] = str(int(fields[3]) + z)
-        minescript.execute(" ".join(fields))
+        moosescript.execute(" ".join(fields))
       elif fields[0] == "/fill":
         # Apply coordinate offsets:
         fields[1] = str(int(fields[1]) + x)
@@ -126,7 +123,7 @@ def main(args):
         fields[4] = str(int(fields[4]) + x)
         fields[5] = str(int(fields[5]) + y)
         fields[6] = str(int(fields[6]) + z)
-        minescript.execute(" ".join(fields))
+        moosescript.execute(" ".join(fields))
       else:
         echo(
             "Error: paste works only with setblock and fill commands, "

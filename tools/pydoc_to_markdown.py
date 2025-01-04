@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-# SPDX-FileCopyrightText: © 2022-2024 Greg Christiana <maxuser@minescript.net>
-# SPDX-License-Identifier: MIT
-
 "Tool for converting pydoc to Markdown."
 
 import re
@@ -147,7 +144,7 @@ def process_pydoc(code_entity: CodeEntity, pydoc: str, anchors: Dict[str, str]):
   if not code_entity:
     # This is the module itself. Get the name from pydoc.
     module_name, version = pydoc.split()[0:2]
-    if module_name == "minescript":
+    if module_name == "moosescript":
       print(f"### {module_name} module")
     else:
       print(f"### {module_name} {version}")

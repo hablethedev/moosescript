@@ -1,6 +1,3 @@
-# SPDX-FileCopyrightText: © 2022-2024 Greg Christiana <maxuser@minescript.net>
-# SPDX-License-Identifier: GPL-3.0-only
-
 # WARNING: This file is generated from the Minescript jar file. This file will
 # be overwritten automatically when Minescript updates to a new version. If you
 # make edits to this file, make sure to save a backup copy when upgrading to a
@@ -17,7 +14,7 @@ import os
 import sys
 
 def ResolveScriptName(name):
-  python_dirs = os.environ["MINESCRIPT_COMMAND_PATH"].split(os.pathsep)
+  python_dirs = os.environ["MOOSESCRIPT_COMMAND_PATH"].split(os.pathsep)
   for dirname in python_dirs:
     script_filename = os.path.join(dirname, name)
     if os.path.exists(script_filename):

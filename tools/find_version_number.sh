@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# SPDX-FileCopyrightText: © 2022-2024 Greg Christiana <maxuser@minescript.net>
-# SPDX-License-Identifier: MIT
-
 if [ "$1" = "-l" ]; then
   grep_flags="-l"
   shift

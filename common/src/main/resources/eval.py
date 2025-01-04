@@ -1,12 +1,9 @@
-# SPDX-FileCopyrightText: © 2022-2024 Greg Christiana <maxuser@minescript.net>
-# SPDX-License-Identifier: GPL-3.0-only
-
-# WARNING: This file is generated from the Minescript jar file. This file will
-# be overwritten automatically when Minescript updates to a new version. If you
+# WARNING: This file is generated from the Moosescript jar file. This file will
+# be overwritten automatically when Moosescript updates to a new version. If you
 # make edits to this file, make sure to save a backup copy when upgrading to a
-# new version of Minescript.
+# new version of Moosescript.
 
-r"""eval v4.0 distributed via Minescript jar file
+r"""eval v4.0 distributed via Moosescript jar file
 
 Usage:
   \eval <pythonCode> [<line2> [<line3> ...]]
@@ -17,7 +14,7 @@ can appear on the right-hand side of an assignment, in which
 case the value is echoed to the chat screen) or Python
 statements (e.g. a `for` loop).
 
-Functions from minescript.py are available automatically without
+Functions from moosescript.py are available automatically without
 qualification.
 
 Examples:
@@ -36,7 +33,7 @@ Examples:
 # pollution.  But it's desirable in this case because it allows single-line
 # Python code that's entered in the Minecraft chat screen to omit the module
 # prefix for brevity. And brevity is important for this use case.
-from minescript import *
+from moosescript import *
 from typing import Any
 import builtins
 import sys

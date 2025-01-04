@@ -1,15 +1,12 @@
-# SPDX-FileCopyrightText: © 2022-2024 Greg Christiana <maxuser@minescript.net>
-# SPDX-License-Identifier: GPL-3.0-only
-
-# WARNING: This file is generated from the Minescript jar file. This file will
-# be overwritten automatically when Minescript updates to a new version. If you
+# WARNING: This file is generated from the Moosescript jar file. This file will
+# be overwritten automatically when Moosescript updates to a new version. If you
 # make edits to this file, make sure to save a backup copy when upgrading to a
-# new version of Minescript.
+# new version of Moosescript.
 
-r"""copy_blocks v4.0 distributed via Minescript jar file
+r"""copy_blocks v4.0 distributed via Moosescript jar file
 
 Requires:
-  minescript v3.0
+  moosescript v3.0
 
 Usage: \copy X1 Y1 Z1 X2 Y2 Z2 [LABEL] [no_limit]
 
@@ -23,17 +20,17 @@ By default, attempts to copy a region covering more than
 passing `no_limit`.
 """
 
-import minescript
+import moosescript
 import os
 import sys
 
-from minescript import echo, BlockPack
-from minescript_runtime import JavaException
+from moosescript import echo, BlockPack
+from moosescript_runtime import JavaException
 
 def main(args):
   if len(args) not in (6, 7, 8):
     echo(
-        "Error: copy command requires 6 params of type integer "
+        "Error: copy_blocks command requires 6 params of type integer "
         "(plus optional params for label and `no_limit`)")
     return
 
@@ -55,7 +52,7 @@ def main(args):
   else:
     label = args[6].replace("/", "_").replace("\\", "_").replace(" ", "_")
 
-  blockpacks_dir = os.path.join("minescript", "blockpacks")
+  blockpacks_dir = os.path.join("moosescript", "blockpacks")
   if not os.path.exists(blockpacks_dir):
     os.makedirs(blockpacks_dir)
 

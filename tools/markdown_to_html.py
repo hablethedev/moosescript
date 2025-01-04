@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-# SPDX-FileCopyrightText: © 2022-2024 Greg Christiana <maxuser@minescript.net>
-# SPDX-License-Identifier: MIT
-
 "Tool for converting Markdown to HTML."
 
 import markdown
@@ -29,8 +26,8 @@ for line in html_output.splitlines():
   # Add a line linking to the latest docs on GitHub above the table of contents.
   if "<p>Table of contents:</p>" in line:
     print(
-        '<p><i>View docs for all versions of Minescript on '
-        '<a href="https://github.com/maxuser0/minescript/blob/main/docs/README.md">GitHub</a>'
+        '<p><i>View docs for all versions of Moosescript on '
+        '<a href="https://github.com/hablethedev/moosescript/blob/main/docs/README.md">GitHub</a>'
         '.</i></p>')
 
   line = line.replace("\\", "&#92;")
