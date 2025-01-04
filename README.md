@@ -1,8 +1,8 @@
-# Minescript
+# Moosescript
 
 ## Introduction
 
-**Minescript** is a platform for controlling and interacting with Minecraft using scripts written in
+**Moosescript** is a platform for controlling and interacting with Minecraft using scripts written in
 Python and other scripting languages. It is implemented as mod for [Fabric](https://fabricmc.net/),
 [Forge](https://files.minecraftforge.net/net/minecraftforge/forge/), and
 [NeoForge](https://neoforged.net/).
