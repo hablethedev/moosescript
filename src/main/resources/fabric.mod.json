@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "moosescript",
+  "version": "1.0",
+
+  "name": "Moosescript",
+  "description": "Python scripting for Minecraft",
+  "authors": [
+    "legitidevs"
+  ],
+  "contact": {
+    "sources": "https://github.com/hablethedev/moosescript",
+    "issues": "https://github.com/hablethedev/moosescript/issues"
+  },
+
+  "license": "GPL-3.0-only",
+  "icon": "assets/moosescript/moosescript-logo.png",
+
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "net.legitimoose.script.MoosescriptFabricMod"
+    ],
+    "client": [
+      "net.legitimoose.script.MoosescriptFabricClientMod"
+    ]
+  },
+
+  "mixins": [
+    "moosescript.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "fabric": "*",
+    "fabric-screen-api-v1": "*",
+    "minecraft": "1.21.4",
+    "java": ">=21"
+  }
+}

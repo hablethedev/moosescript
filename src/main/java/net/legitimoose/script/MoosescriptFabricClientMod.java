@@ -1,0 +1,44 @@
+package net.legitimoose.script;
+
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientChunkEvents;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext;
+import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
+import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
+import net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.ChatScreen;
+import net.minecraft.client.gui.screens.Screen;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public final class MoosescriptFabricClientMod implements ClientModInitializer {
+  private static final Logger LOGGER = LoggerFactory.getLogger("moosescript");
+
+  @Override
+  public void onInitializeClient() {
+    LOGGER.info("(moosescript) Moosescript mod starting...");
+
+    ClientChunkEvents.CHUNK_LOAD.register(Moosescript::onChunkLoad);
+    ClientChunkEvents.CHUNK_UNLOAD.register(Moosescript::onChunkUnload);
+
+    Moosescript.init(new FabricPlatform());
+    ClientTickEvents.START_WORLD_TICK.register(world -> Moosescript.onClientWorldTick());
+    ScreenEvents.AFTER_INIT.register(this::afterInitScreen);
+    WorldRenderEvents.END.register(this::onRender);
+  }
+
+  private void afterInitScreen(Minecraft client, Screen screen, int windowWidth, int windowHeight) {
+    if (screen instanceof ChatScreen) {
+      ScreenKeyboardEvents.allowKeyPress(screen)
+          .register(
+              (_screen, key, scancode, modifiers) ->
+                  !Moosescript.onKeyboardKeyPressed(_screen, key));
+    }
+  }
+
+  private void onRender(WorldRenderContext context) {
+    Moosescript.onRenderWorld();
+  }
+}

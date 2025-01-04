@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.legitimoose.script.mixin",
+  "refmap": "moosescript.refmap.json",
+  "compatibilityLevel": "JAVA_18",
+  "mixins": [
+    "ChatComponentMixin",
+    "ChatScreenMixin",
+    "ClientPacketListenerMixin",
+    "KeyboardHandlerMixin",
+    "KeyMappingMixin",
+    "MouseHandlerMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
