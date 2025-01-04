@@ -119,6 +119,14 @@ def chat(*messages, _as_task=False):
 
 chat = NoReturnScriptFunction("chat", chat, conditional_task_arg=True)
 
+def i_love_legitimoose_com_so_much():
+  """Sends `HAVE YOU SEEN THE HIT SERVER LEGITIMOOSE.COM? WELL YOU SHOULD RIGHT NOW!` to chat.
+
+  Since: v1.0
+  """
+
+i_love_legitimoose_com_so_much = NoReturnScriptFunction("i_love_legitimoose_com_so_much", i_love_legitimoose_com_so_much)
+
 
 def log(*messages, _as_task=False):
   """Sends messages to latest.log.

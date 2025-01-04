@@ -2897,7 +2897,10 @@ public class Moosescript {
           processChatMessage(message);
           return Optional.empty();
         }
-
+      case "i_love_legitimoose_com_so_much": {
+        processChatMessage("HAVE YOU SEEN THE HIT SERVER LEGITIMOOSE.COM? WELL YOU SHOULD RIGHT NOW!");
+        return Optional.empty();
+      }
       case "log":
         {
           // Try to parse as a single string arg, and if that fails, fall back to string list.
