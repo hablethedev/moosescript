@@ -450,7 +450,7 @@ def java_test():
   class_class = moosescript.java_class("java.lang.Class")
   object_getClass = moosescript.java_member(object_class, "getClass")
   class_getName = moosescript.java_member(class_class, "getName")
-  Numbers_class = moosescript.java_class("dev.moosescript.common.Numbers")
+  Numbers_class = moosescript.java_class("net.legitimoose.script.Numbers")
   Numbers_divide = moosescript.java_member(Numbers_class, "divide")
   Numbers_lessThan = moosescript.java_member(Numbers_class, "lessThan")
 
