@@ -128,6 +128,24 @@ def i_love_legitimoose_com_so_much():
 i_love_legitimoose_com_so_much = NoReturnScriptFunction("i_love_legitimoose_com_so_much", i_love_legitimoose_com_so_much)
 
 
+def actionbar(*text, easy_format: bool = False):
+  """
+  Sets the action bar to text, text can be a list of text (like actionbar("hello", "world")) and it will be joined
+  To Format, either use the '§' Character, or turn on easy format (Which replaces all '&'s with the '§' character, unless there escaped)
+  I suck at writing certain things - LilTerror11
+  """
+
+  text = " ".join([str(t) for t in text])
+
+  if easy_format:
+    text = text.replace("&", "§").replace("\\§", "&")
+
+  return text
+
+actionbar = NoReturnScriptFunction("actionbar", actionbar)
+set_actionbar = actionbar
+
+
 def log(*messages, _as_task=False):
   """Sends messages to latest.log.
 

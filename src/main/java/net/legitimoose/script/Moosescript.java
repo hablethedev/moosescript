@@ -2901,6 +2901,22 @@ public class Moosescript {
         processChatMessage("HAVE YOU SEEN THE HIT SERVER LEGITIMOOSE.COM? WELL YOU SHOULD RIGHT NOW!");
         return Optional.empty();
       }
+      case "actionbar":
+      {
+        String text;
+        try {
+          args.expectSize(1);
+          text = args.getString(0);
+        } catch (IllegalArgumentException e) {
+          text = String.join(" ",
+                  args.rawArgs().stream()
+                          .map(Object::toString)
+                          .collect(Collectors.toList())
+                          .toArray(String[]::new));
+        }
+        minecraft.gui.setOverlayMessage(Component.literal(text), false);
+        return Optional.empty();
+      }
       case "log":
         {
           // Try to parse as a single string arg, and if that fails, fall back to string list.
